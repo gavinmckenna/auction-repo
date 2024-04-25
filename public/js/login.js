@@ -1,4 +1,4 @@
-var db = firebase.firestore();
+import { db } from './firebase-config.js';
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
