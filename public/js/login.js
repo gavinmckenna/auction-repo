@@ -6,7 +6,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Proceed with Firestore operations
     db.collection('User').where('username', '==', username).get()
     .then(snapshot => {
         if (snapshot.empty) {
@@ -15,11 +14,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         let userAuthenticated = false;
         snapshot.forEach(doc => {
             const userData = doc.data();
-            // IMPORTANT: This is insecure; see the security note below
             if (userData.password === password) {
                 userAuthenticated = true;
                 console.log('User authenticated:', userData);
-                // Proceed with user session establishment and/or redirection
             }
         });
         if (!userAuthenticated) {
