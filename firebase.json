@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "site": "auction-site-mess",
+    "site": "auction-91aa7",
     "public": "public",
     "ignore": [
       "firebase.json",
