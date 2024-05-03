@@ -1,0 +1,15 @@
+deplopyment docs:
+
+https://firebase.google.com/docs/hosting/quickstart#:~:text=1%20Step%201%3A%20Install%20the%20Firebase%20CLI%20Visit,...%203%20Step%203%3A%20Deploy%20to%20your%20site
+
+firebase deploy --only hosting
+
+project: auction-house-mess
+
+project url: auction-91aa7
+
+git:
+
+git add .
+git commit -m "sorting"
+git push
