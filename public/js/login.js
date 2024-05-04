@@ -22,6 +22,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
             if (userData.password === password) {
                 userAuthenticated = true;
                 console.log('User authenticated:', userData);
+                window.location.href = 'homepage.html';
             }
         });
 
