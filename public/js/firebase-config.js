@@ -13,6 +13,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app, { databaseName: 'auction-db' });
+const db = getFirestore(app, { databaseName: 'auction-database' });
 
 export { db };
