@@ -1,6 +1,6 @@
 import { db } from './firebase-config.js';
 import { Timestamp, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-import { getNextUserId } from './getNextUserId.js';
+import { getNextUserId } from '../../archives/getNextUserId.js';
 
 document.getElementById('create-profile').addEventListener('click', async function() {
     const username = prompt("Enter a username:");
@@ -8,12 +8,12 @@ document.getElementById('create-profile').addEventListener('click', async functi
 
     if (username && password) {
         try {
-            const userId = await getNextUserId();
+            const userId = Math.floor(Math.random() * 1000000);
             const userRef = collection(db, 'User');
             await addDoc(userRef, {
                 username: username,
                 password: password,
-                sessionId: 1, // Initial sessionId value
+                sessionID: Timestamp,
                 userId: userId
             });
             alert("Profile created successfully!");

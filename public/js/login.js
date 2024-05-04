@@ -19,10 +19,11 @@ document.getElementById('login-form').addEventListener('submit', async function(
         let userAuthenticated = false;
         snapshot.forEach(doc => {
             const userData = doc.data();
+            console.log('User data:', userData);
             if (userData.password === password) {
                 userAuthenticated = true;
                 console.log('User authenticated:', userData);
-                window.location.href = 'homepage.html';
+                window.location.href = '../homepage.html';
             }
         });
 

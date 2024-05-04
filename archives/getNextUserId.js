@@ -1,5 +1,5 @@
 import { doc, getDoc, increment, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-import { db } from './firebase-config.js';
+import { db } from '../public/js/firebase-config.js';
 
 export async function getNextUserId() {
     const counterRef = doc(db, 'counters', 'UsersCounter');
