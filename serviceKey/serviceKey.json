@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "auction-site-mess",
+  "private_key_id": "9aa387f5157de2bebb8f8483bb8af2b4c5d62606",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDLwnDWumFcKnR9\nAafFLdDtUM52Sijvq18mFF4VGzrWy6Opi0sSJZwY4YZAjzCe8a1/3Yu6WYG7Dwgm\neCgALo845C8gb73IABKueiCt6eae1UcU9VMrEfoRbrMRJQE/SKilaNQZK16YlcyN\nCYokO5u+FVUL3bIEPNakGHj2VjPoaSItsSjYIC4TaAvSGFwjXycDGKBym5obmjr9\n6p/pw+Q3H2WSBSnrRbahk+GivEnAxUmrHORtk+DMdYqtgP0MDZVLRmHjTCSP828T\noAR+gPg8ih3z72X1W+95S8u7UQMWzq2bxX86jX3sEJCv9efHYzjzjZWIIh7dliwA\nbHyC+49rAgMBAAECggEAIhut3Nv9MTrwHf7ZcTHer+MfdICsgpYqysqNBzZ0LoGP\nJ3HoQqTmEOormYH+rxSgqO9SlQKnq0L0Z9AkTgd9NRZJZ0IdQC328psB/mrRjpQA\nHpuEbQjI1gM0WXHa2BeXF31JR99RKfSldZR7ud36j6Kthlt5kakHexeXpBDBBq3K\nMqlQOENXcgi2teyOfkWsUPnJkgT4K/ICaL5lpUo6MzERXHgWIOnwthOZKGmrLt0v\n98wA6lFmhV52X5tjnib6r1ItaW7wBIVhKzw46R/4kgRuxerHRzZEY7X8agyZYXSM\n2rmaQFd8De0cwla3YWIvj43/wCkd2a/JZvo1yDBG7QKBgQDkiT7pBV785JFoqvTI\nYy32IElC4Ko0KYp7pnRupiqbazs6Fp4O7OOI4Rqsfw2/I/7mDNVV/3wnmqbl6WHB\nXxZskfSpS1/qRRrP4ZO6r3DJcGtpLHEf0GtCBeM4QgR8dkMc2ygH5pq3A/dXeMCj\noX0BsyfHIgBmSGQKlIiRiF9NZQKBgQDkPvX04VCAROvs0bm66VEWmGQsdycxfWF4\nmEG2wtBtCb83l5rNc1CsoCKa0p52EJ1MsROnWDtWPCIqrJUMPuP7M42DKigwXTmi\nS+H6XgqZ4iMBN7Mrq61aUb0R/z5IBGkFnvF5ShVrsOUchqpVlr9ONTf68TyRa0hM\nCYeEA6bEjwKBgCmYMTMIHzm4AB8kvliadIsPZUYezdugk+vdZ+ObqrWO1sDDzRC6\nXM9U6R3sIfxf+My2GT4FufsbUrUVvQ0M2W/5QKZvaY2h9jdPvyuDMuv24hXKWOyJ\nanwhxjE/EsH0ZFKkMKz/c7lLp4DsIWOmyLG+gcbkkV4MXujuD80tHOthAoGAUS2n\ncuIULJrWwlLRWQ4UnhGzRzFVyj9KxIZ6kNL3KGDYFqCgGURTRCJsTF5up5U/LQCp\n+dHiwMgAaucY19MiaLysLyN2ScVOc0/D3rVF1fdc9djmq7iSnlYGBfmfICQZajte\nrQHRXoz638txl6FXByzcbS8RmLLscsbM4QIfdTcCgYAmvcQDJHUO14zPNSgTo4Ff\noy62K6d18e/T9DhUCJVu8ydTE3mlVLQdzbur37IJ+1GuG5iG8xSqHTsSfhNTgW3p\n9LibQk581h33t/EiOOanJtt3LH/ukq7jwjfhMAnIlRiLKzYEIDWrd9dYUE/X3sgU\nNRbFGRPlHhxBF6DXywSTrA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-p2ttm@auction-site-mess.iam.gserviceaccount.com",
+  "client_id": "113032938255910652681",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-p2ttm%40auction-site-mess.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
