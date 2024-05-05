@@ -1,39 +1,23 @@
-import { db } from './firebase-config.js';
+import { db, auth } from './firebase-config.js';
 import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
 document.getElementById('login-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
-        const userRef = collection(db, 'User');
-        const q = query(userRef, where('username', '==', username));
-        const snapshot = await getDocs(q);
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
-        if (snapshot.empty) {
-            throw new Error('No matching user');
+        if (user) {
+            console.log('User authenticated:', user);
+            window.location.href = `../homepage.html?userId=${user.uid}`;
+        } else {
+            throw new Error('Authentication failed');
         }
-
-        let userAuthenticated = false;
-        let userId = '';
-
-        snapshot.forEach(doc => {
-            const userData = doc.data();
-            if (userData.password === password) {
-                userAuthenticated = true;
-                userId = doc.id;
-                console.log('User authenticated:', userData);
-            }
-        });
-
-        if (!userAuthenticated) {
-            throw new Error('Incorrect username or password');
-        }
-
-        window.location.href = `homepage.html?userId=${userId}`;
-
     } catch (error) {
         console.error('Authentication error:', error);
         document.getElementById('login-error').textContent = error.message;
