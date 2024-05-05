@@ -18,24 +18,26 @@
         </div>
     </div>
     <script type="module">
-        document.getElementById('search-auctions').addEventListener('click', function() {
-            window.location.href = 'search.html';
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('search-auctions').addEventListener('click', function() {
+                window.location.href = 'search.html';
+            });
 
-        document.getElementById('view-all-items').addEventListener('click', function() {
-            window.location.href = 'items.html';
-        });
+            document.getElementById('view-all-items').addEventListener('click', function() {
+                window.location.href = 'items.html';
+            });
 
-        document.getElementById('view-your-bids').addEventListener('click', function() {
-            window.location.href = 'bids.html';
-        });
+            document.getElementById('view-your-bids').addEventListener('click', function() {
+                window.location.href = 'bids.html';
+            });
 
-        document.getElementById('view-your-items').addEventListener('click', function() {
-            window.location.href = 'items.html';
-        });
+            document.getElementById('view-your-items').addEventListener('click', function() {
+                window.location.href = 'items.html';
+            });
 
-        document.getElementById('view-your-messages').addEventListener('click', function() {
-            window.location.href = 'messages.html';
+            document.getElementById('view-your-messages').addEventListener('click', function() {
+                window.location.href = 'messages.html';
+            });
         });
     </script>
 </body>

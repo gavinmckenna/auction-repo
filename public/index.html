@@ -10,12 +10,12 @@
     <div class="login-container">
         <h2>Login to the Auction House</h2>
         <form id="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" autocomplete="username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+          <button type="submit">Login</button>
+       </form>
         <button id="create-profile">Create Profile</button>
         <p id="login-error" style="color: red;"></p>
     </div>

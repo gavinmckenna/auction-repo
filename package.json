@@ -1,23 +1,35 @@
 {
   "name": "auction2",
   "version": "1.0.0",
-  "description": "networks project",
-  "main": "index.js",
+  "description": "An online auction site built with Node.js, Express, and Firebase Admin SDK.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "test": "echo \"No tests specified\" && exit 0",
     "build": "echo 'Build process complete!'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gavinmckenna/auction-repo.git"
+    "url": "git+https://github.com/gavinmckenna/auction-site.git"
   },
   "keywords": [
-    "auction"
+    "auction",
+    "nodejs",
+    "express",
+    "firebase"
   ],
   "author": "Gavin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gavinmckenna/auction-repo/issues"
+    "url": "https://github.com/gavinmckenna/auction-site/issues"
   },
-  "homepage": "https://github.com/gavinmckenna/auction-repo#readme"
+  "homepage": "https://github.com/gavinmckenna/auction-site#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "firebase-admin": "^12.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
 }
+

@@ -17,13 +17,14 @@ document.getElementById('login-form').addEventListener('submit', async function(
         }
 
         let userAuthenticated = false;
+        let userId = '';
+
         snapshot.forEach(doc => {
             const userData = doc.data();
-            console.log('User data:', userData);
             if (userData.password === password) {
                 userAuthenticated = true;
+                userId = doc.id;
                 console.log('User authenticated:', userData);
-                window.location.href = '../homepage.html';
             }
         });
 
@@ -31,9 +32,10 @@ document.getElementById('login-form').addEventListener('submit', async function(
             throw new Error('Incorrect username or password');
         }
 
+        window.location.href = `homepage.html?userId=${userId}`;
+
     } catch (error) {
         console.error('Authentication error:', error);
         document.getElementById('login-error').textContent = error.message;
     }
 });
-
