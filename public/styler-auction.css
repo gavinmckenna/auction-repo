@@ -1,0 +1,62 @@
+.item-container {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.item-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.item-desc {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.item-price, .item-buyout {
+    font-size: 18px;
+    color: green;
+    margin: 5px 0;
+}
+
+.countdown {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#searchInput {
+    padding: 8px;
+    margin-left: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

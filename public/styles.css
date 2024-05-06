@@ -48,6 +48,30 @@ input[type="password"] {
     background-color: #f4f4f4;
 }
 
+.bids-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#bids-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#bids-table th, #bids-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#bids-table th {
+    background-color: #f4f4f4;
+}
+
+
 button {
     background-color: #4CAF50;
     color: white;

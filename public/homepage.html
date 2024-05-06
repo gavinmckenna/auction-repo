@@ -10,8 +10,7 @@
     <div class="home-container">
         <h2>Welcome to the Auction House!</h2>
         <div class="button-group">
-            <button id="search-auctions">Search Auctions</button>
-            <button id="view-all-items">View All Items</button>
+            <button id="view-all-items">View Live Auctions</button>
             <button id="view-your-bids">View Your Bids</button>
             <button id="view-your-items">View Your Items</button>
             <button id="view-your-messages">View Your Messages</button>
@@ -19,12 +18,8 @@
     </div>
     <script type="module">
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('search-auctions').addEventListener('click', function() {
-                window.location.href = 'search.html';
-            });
-
             document.getElementById('view-all-items').addEventListener('click', function() {
-                window.location.href = 'items.html';
+                window.location.href = 'auction-house.html';
             });
 
             document.getElementById('view-your-bids').addEventListener('click', function() {
