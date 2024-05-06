@@ -14,7 +14,7 @@ async function loadMessages(userId) {
   
     // Query messages for the current user
     const messagesQuery = query(collection(db, "Message"), where("redID", "==", parseInt(userId)));
-    const broadcastQuery = quert(collection(db, "Message"), where("broadcast", "==", true));
+    const broadcastQuery = query(collection(db, "Message"), where("broadcast", "==", true));
     const [messagesSnapshot, broadcastSnapshot] = await Promise.all([
         getDocs(messagesQuery),
         getDocs(broadcastQuery)
