@@ -11,9 +11,13 @@ onAuthStateChanged(auth, user => {
 
 // Function to load and show messages
 async function loadMessages(userId) {
+    const usernameQuery = query(collection(db, "User"), where("userId", "==", userId));
+    const usernameSnapshot = await getDocs(usernameQuery);
+    const username = usernameSnapshot.docs[0].data().username;
+    console.log("Username: ", username);
   
     // Query messages for the current user
-    const messagesQuery = query(collection(db, "Message"), where("redID", "==", parseInt(userId)));
+    const messagesQuery = query(collection(db, "Message"), where("toUser", "==", username));
     const broadcastQuery = query(collection(db, "Message"), where("broadcast", "==", true));
     const [messagesSnapshot, broadcastSnapshot] = await Promise.all([
         getDocs(messagesQuery),
@@ -25,7 +29,7 @@ async function loadMessages(userId) {
     messagesSnapshot.forEach(doc => {
       const data = doc.data();
       const row = messagesTable.insertRow();
-      row.insertCell().textContent = data.redID;
+      row.insertCell().textContent = data.toUser;
       row.insertCell().textContent = data.senderID;
       row.insertCell().textContent = data.msgTime.toDate().toLocaleString(); // Convert timestamp to readable date
       row.insertCell().textContent = data.msg;
