@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="user-info">
+        <h3 id="user-name">User: <span>Guest</span></h3>
+        <button id="logout-button">Logout</button>
+    </div>
     <div class="home-container">
         <h2>Welcome to the Auction House!</h2>
         <div class="button-group">
@@ -16,24 +20,11 @@
             <button id="view-your-messages">View Your Messages</button>
         </div>
     </div>
-    <script type="module">
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('view-all-items').addEventListener('click', function() {
-                window.location.href = 'auction-house.html';
-            });
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/homepage.js"></script>
 
-            document.getElementById('view-your-bids').addEventListener('click', function() {
-                window.location.href = 'bids.html';
-            });
-
-            document.getElementById('view-your-items').addEventListener('click', function() {
-                window.location.href = 'items.html';
-            });
-
-            document.getElementById('view-your-messages').addEventListener('click', function() {
-                window.location.href = 'messages.html';
-            });
-        });
-    </script>
 </body>
 </html>
