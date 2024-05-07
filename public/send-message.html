@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/send-message.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Send a New Message</h2>
+        <form id="send-message-form">
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" required>
+
+            <input type="checkbox" id="broadcast" name="broadcast">
+            <label for="broadcast">Send to Everyone</label>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's Messages</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/messages.js"></script>
+</head>
+<body>
+    <div class="items-container">
+        <h2>Your Messages</h2>
+        <table id="messages-table">
+            <thead>
+                <tr>
+                    <th>To</th>
+                    <th>From</th>
+                    <th>Date</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Messages will be dynamically inserted here by the messages.js script -->
+            </tbody>
+        </table>
+        <button id="send-message" onclick="window.location.href='send-message.html';">Send New Message</button>
+        <button id="return-menu" onclick="window.location.href='homepage.html';">Return to Homepage</button>
+    </div>
+</body>
+</html>
