@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Send Message</title>
     <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input[type="text"],
+        .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .form-container textarea {
+            height: 100px;
+        }
+
+        .form-container input[type="checkbox"]:checked + label {
+            color: #888;
+        }
+
+        .form-container input[type="checkbox"]:checked ~ #to {
+            background-color: #f0f0f0;
+        }
+    </style>
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
@@ -28,5 +73,14 @@
         </form>
         <button id="return-to-messages" onclick="window.location.href='messages.html';">Back to Messages</button>
     </div>
+    <script>
+        document.getElementById('broadcast').addEventListener('change', function() {
+            var toField = document.getElementById('to');
+            toField.disabled = this.checked;
+            if (this.checked) {
+                toField.value = '';
+            }
+        });
+    </script>
 </body>
 </html>
