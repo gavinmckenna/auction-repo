@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     sellerID: auth.currentUser.uid,
                     activeStatus: true,
                     currPrice: parseFloat(startPrice),
-                    winnerID: ""
+                    winnerID: "",
+                    messaged: false
                 });
                 console.log("Document written with ID: ", docRef.id);
                 alert("Item created successfully!");
