@@ -1,5 +1,5 @@
 import { db, auth } from './firebase-config.js';
-import { collection, getDocs, getDoc, doc, updateDoc, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { collection, getDocs, getDoc, doc, updateDoc, addDoc, serverTimestamp, query, where } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
     initializeSearch();
@@ -13,20 +13,44 @@ async function loadAndDisplayAuctionItems() {
         const itemsContainer = document.getElementById('auction-container');
         itemsContainer.innerHTML = '';
 
-        querySnapshot.forEach(doc => {
+        const itemsWithUsers = await Promise.all(querySnapshot.docs.map(async (doc) => {
             const item = doc.data();
-            const itemElement = createItemElement(doc.id, item);
+            const userEmail = await fetchUserEmail(item.sellerID);
+            return { item, userEmail, docId: doc.id };
+        }));
+
+        itemsWithUsers.forEach(({ item, userEmail, docId }) => {
+            const itemElement = createItemElement(docId, item, userEmail);
             itemsContainer.appendChild(itemElement);
-            initializeCountdown(`countdown-${doc.id}`, item.endTime.seconds * 1000);
+            initializeCountdown(`countdown-${docId}`, item.endTime.seconds * 1000);
         });
     } catch (error) {
         console.error("Failed to load auction items:", error);
     }
 }
 
-function createItemElement(docId, item) {
+async function fetchUserEmail(userId) {
+    const userRef = collection(db, 'User');
+    const q = query(userRef, where('userId', '==', userId));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.docs.length > 0) {
+        return querySnapshot.docs[0].data().email;
+    } else {
+        return 'Unknown';
+    }
+}
+
+function createItemElement(docId, item, userEmail) {
     const itemElement = document.createElement('div');
     itemElement.classList.add('item-container');
+
+    itemElement.innerHTML = `
+        <div class="item-title">${item.itemName}</div>
+        <div class="item-desc">${item.itemDesc}</div>
+        <div class="item-price">Current Bid: $${item.currPrice}</div>
+        <div class="item-buyout">Buyout Price: $${item.buyoutPrice}</div>
+        <div class="item-seller">Posted by: ${userEmail}</div>
+    `;
 
     const bidInput = document.createElement('input');
     bidInput.type = 'number';
@@ -36,18 +60,12 @@ function createItemElement(docId, item) {
 
     const bidButton = document.createElement('button');
     bidButton.textContent = 'Place Bid';
-    bidButton.onclick = () => placeBid(docId, bidInput.value);
+    bidButton.onclick = () => placeBid(docId, parseFloat(bidInput.value));
 
     const buyoutButton = document.createElement('button');
     buyoutButton.textContent = 'Buyout';
     buyoutButton.onclick = () => buyoutItem(docId, item.buyoutPrice);
 
-    itemElement.innerHTML = `
-        <div class="item-title">${item.itemName}</div>
-        <div class="item-desc">${item.itemDesc}</div>
-        <div class="item-price">Current Bid: $${item.currPrice}</div>
-        <div class="item-buyout">Buyout Price: $${item.buyoutPrice}</div>
-    `;
     itemElement.appendChild(bidInput);
     itemElement.appendChild(bidButton);
     itemElement.appendChild(buyoutButton);
